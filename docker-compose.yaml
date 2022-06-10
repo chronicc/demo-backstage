@@ -1,0 +1,18 @@
+---
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 127.0.0.1:5432:5432
+    environment:
+      POSTGRES_DB: backstage
+      POSTGRES_PASSWORD: vippass
+      POSTGRES_USER: vip
+
+volumes:
+  db-data:
